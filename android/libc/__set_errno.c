@@ -28,8 +28,6 @@
 
 #include <errno.h>
 
-#ifdef __LP64__
-
 /* __set_errno was mistakenly exposed in <errno.h> in the 32-bit NDK.
  * but is no more present for 64-bit targets!
  */
@@ -40,4 +38,3 @@ long __set_errno(int n)
     return -1;
 }
 
-#endif
